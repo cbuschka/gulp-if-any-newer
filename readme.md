@@ -14,7 +14,7 @@ const DEST = 'dist';
 
 gulp.task('default', () =>
   gulp.src(SRC)
-    .pipe(ifAnyNewer(DEST, { filter: '**/*' }))
+    .pipe(ifAnyNewer(DEST, { filter: '**/*', debug: true }))
     // anyConsumer will only get the files feeded in
     // if any source file is newer than any file in dest
     .pipe(anyConsumer())
