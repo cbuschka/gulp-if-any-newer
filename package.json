@@ -1,0 +1,51 @@
+{
+  "name": "gulp-if-any-newer",
+  "version": "1.0.0",
+  "description": "Pass through all source files if any source file is newer than any dest file.",
+  "license": "MIT",
+  "repository": "cbuschka/gulp-if-any-newer",
+  "author": {
+    "name": "Cornelius Buschka",
+    "email": "cbuschka@gmail.com",
+    "url": "github.com/cbuschka"
+  },
+  "contributors": [
+    {
+      "name": "Cornelius Buschka",
+      "url": "github.com/cbuschka"
+    }
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "file",
+    "files",
+    "changed",
+    "newer",
+    "modified",
+    "modification",
+    "updated",
+    "time",
+    "mtime",
+    "stat",
+    "cache",
+    "cached",
+    "passthrough"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "glob": "^7.1.2",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "get-stream": "^3.0.0",
+    "gulp": "^3.0.0",
+    "standard": "^10.0.3"
+  }
+}
