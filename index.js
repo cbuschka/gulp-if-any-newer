@@ -25,7 +25,8 @@ const gulpIfAnyNewer = (dest, opts) => {
 
 	opts = Object.assign({
 		cwd: process.cwd(),
-		filter: '**/*'
+		filter: '**/*',
+		debug: false
 	}, opts)
 
 	const destAbs = path.resolve(opts.cwd, dest)
@@ -35,23 +36,40 @@ const gulpIfAnyNewer = (dest, opts) => {
 	let open = destMinModTime === Number.MAX_SAFE_INTEGER
 	return through.obj(function (chunk, enc, callback) {
 
-		if( !open && chunk.path ) {
+		if( !open ) {
 			let srcPath = chunk.path
 			let stats = fs.statSync(srcPath)
 			if( stats.mtime > destMinModTime ) {
 				open = true
+				if( opts.debug ) {
+					gutil.log(srcPath, 'newer than any in ', dest + '/' + opts.filter,', opened buffer')
+				}
 			}
 		}
 
 		if( !open ) {
+			if( opts.debug ) {
+				gutil.log('Buffered', chunk.path)
+			}
 			buffer.push(chunk)
 		} else {
 			if( buffer.length > 0 ) {
+				if( opts.debug ) {
+					gutil.log('Flushing buffer...')
+				}
 				for(let i=0; i<buffer.length; ++i) {
-					const chunk = buffer[i]
-					this.push(chunk)
+					if( opts.debug ) {
+						gutil.log('Forwarded', buffer[i].path)
+					}
+					this.push(buffer[i])
 				}
 				buffer = []
+				if( opts.debug ) {
+					gutil.log('Buffer flushed')
+				}
+			}
+			if( opts.debug ) {
+				gutil.log('Forwarded', chunk.path)
 			}
 			this.push(chunk)
 		}
