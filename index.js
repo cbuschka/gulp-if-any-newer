@@ -31,7 +31,7 @@ const gulpIfAnyNewer = (dest, opts) => {
 	const destAbs = path.resolve(opts.cwd, dest)
 	const destMinModTime = getMinModTime(destAbs, opts.filter)
 
-	const buffer = []
+	let buffer = []
 	let open = destMinModTime === Number.MAX_SAFE_INTEGER
 	return through.obj(function (chunk, enc, callback) {
 
