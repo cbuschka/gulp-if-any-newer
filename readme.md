@@ -22,6 +22,11 @@ gulp.task('default', () =>
 );
 ```
 
+## Related Gulp Plugins
+* [gulp-newer](https://github.com/tschaub/gulp-newer)
+* [gulp-changed](https://github.com/sindresorhus/gulp-changed)
+* [gulp-changed-in-place](https://github.com/alexgorbatchev/gulp-changed-in-place)
+
 ## License
 
 Copyriht (c) 2017 by [Cornelius Buschka](https://github.com/cbuschka)
