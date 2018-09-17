@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Pass through all source files if any source file is newer than any dest file.",
   "license": "MIT",
-  "repository": "cbuschka/gulp-if-any-newer",
+  "repository": "github.com/cbuschka/gulp-if-any-newer",
   "author": {
     "name": "Cornelius Buschka",
     "email": "cbuschka@gmail.com",
