@@ -27,8 +27,11 @@ gulp.task('default', () =>
 * [gulp-changed](https://github.com/sindresorhus/gulp-changed)
 * [gulp-changed-in-place](https://github.com/alexgorbatchev/gulp-changed-in-place)
 
+## Contributing
+Thanks to all contributors! This is open source, Pull Requests are welcome!
+
 ## License
 
-Copyriht (c) 2017 by [Cornelius Buschka](https://github.com/cbuschka)
+Copyright (c) 2017-2020 by [Cornelius Buschka](https://github.com/cbuschka)
 
 [MIT License](license)
