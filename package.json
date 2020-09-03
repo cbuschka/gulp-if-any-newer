@@ -1,6 +1,6 @@
 {
   "name": "gulp-if-any-newer",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Pass through all source files if any source file is newer than any dest file.",
   "license": "MIT",
   "repository": "github.com/cbuschka/gulp-if-any-newer",
